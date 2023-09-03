@@ -20,7 +20,7 @@ describe("PortfolioHeader Component", () => {
       />,
     );
 
-    expect(screen.getByText("£9,560.00")).toBeInTheDocument();
+    expect(screen.getByText("£10,060.00")).toBeInTheDocument();
   });
 
   it("display £0.00 when there are no holdings", () => {

@@ -81,7 +81,7 @@ export const TEST_PORTFOLIO: Portfolio = {
       sector: BASIC_MATERIALS,
       lastPrice: 500,
       change: 1.5,
-      shares: 100,
+      shares: 200,
     },
   ],
 };
