@@ -1,6 +1,12 @@
+# Notes
+
+- I used client-side data fetching for the portfolio data as I am assuming SEO is not a concern for a users portfolio page. If SEO was a concern I would have used server-side data fetching using `getServerSideProps` because that method would mean that the data is fetched server-side and the page is pre-rendered.
+- I have placed the components for the portfolio page within its folder as they are only used by that page in this case. If some or all of the components were also used elsewhere I would have placed them in the `.src/components` folder.
+- To reduce the number of files and boilerplate, the loading and not found states for the portfolio page are handled within the portfolio page component. If they were more complex or used by more than just the portfolio page I would create separate components for them.
+
 # Requirements
 
-The objective of this exercise is to create a simple portfolio page using the data provided in the mock API. 
+The objective of this exercise is to create a simple portfolio page using the data provided in the mock API.
 
 Users should be able to navigate to `http://localhost:3000/portfolio/1` and see the portfolio page as per this design:
 
@@ -23,9 +29,9 @@ You should implement two pages:
 
 The page should be responsive and should work on mobile, tablet, and desktop screens. Please use the following breakpoints:
 
-* Mobile: <768px
-* Tablet: 768px - 991px
-* Desktop: >992px
+- Mobile: <768px
+- Tablet: 768px - 991px
+- Desktop: >992px
 
 The page is broken down into two main sections:
 
@@ -62,24 +68,24 @@ This section displays a list of sectors from your portfolio holdings, and duplic
 
 This section displays a table of all holdings in the portfolio. The table should display:
 
-* Security name
-* Sector name
-* Number of shares
-* Last price (price of the security in pence, formatted as `1,234.56p`)
-* Change (change in price of the security in pence, formatted as `+1,234.56` or `-1,234.56`; the text should be green if the change is positive and red if the change is negative).
+- Security name
+- Sector name
+- Number of shares
+- Last price (price of the security in pence, formatted as `1,234.56p`)
+- Change (change in price of the security in pence, formatted as `+1,234.56` or `-1,234.56`; the text should be green if the change is positive and red if the change is negative).
 
 We expect you to spend a few hours on this project, but don't worry if you don't finish everything within that timeframe. Please let us know which areas you weren't able to complete and how you plan to finish them if given more time.
 
 ## Styling
 
-The project is configured to support SCSS modules and BEM naming convention. 
+The project is configured to support SCSS modules and BEM naming convention.
 
 ```scss
 // button.component.scss
 $color: rgba(0, 0, 0, 0.8);
 
-.button { 
-    color: $color; 
+.button {
+    color: $color;
 }
 
 .button--primary { ... }
@@ -90,10 +96,10 @@ $color: rgba(0, 0, 0, 0.8);
 ```tsx
 // button.component.tsx
 import { FunctionComponent } from "react";
-import styles from './button.component.scss';
+import styles from "./button.component.scss";
 
 export const Button: FunctionComponent = () => (
-  <button className={styles.button + ' ' + styles.buttonPrimary}>
+  <button className={styles.button + " " + styles.buttonPrimary}>
     <span className={styles.button__text}>Click me</span>
   </button>
 );
