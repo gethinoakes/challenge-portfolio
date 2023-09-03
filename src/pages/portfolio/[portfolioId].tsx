@@ -3,8 +3,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import { PortfolioHeader } from "./components/portfolio-header/portfolio-header";
-import { PortfolioHoldings } from "./components/portfolio-holdings/portfolio-holdings";
+import { PortfolioHeader } from "@/components/portfolio-header/portfolio-header";
+import { PortfolioHoldings } from "@/components/portfolio-holdings/portfolio-holdings";
 import styles from "./portfolio.module.scss";
 
 const Portfolio = () => {

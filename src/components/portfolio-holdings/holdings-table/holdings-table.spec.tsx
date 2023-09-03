@@ -1,5 +1,4 @@
 import { TEST_PORTFOLIO } from "@/mocks/portfolio.mocks";
-import "@testing-library/jest-dom/extend-expect";
 import { render, screen } from "@testing-library/react";
 import { HoldingsTable } from "./holdings-table";
 

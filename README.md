@@ -1,7 +1,8 @@
 # Notes
 
 - I used client-side data fetching for the portfolio data as I am assuming SEO is not a concern for a users portfolio page. If SEO was a concern I would have used server-side data fetching using `getServerSideProps` because that method would mean that the data is fetched server-side and the page is pre-rendered.
-- I have placed the components for the portfolio page within its folder as they are only used by that page in this case. If some or all of the components were also used elsewhere I would have placed them in the `.src/components` folder.
+- ~~I have placed the components for the portfolio page within its folder as they are only used by that page in this case. If some or all of the components were also used elsewhere I would have placed them in the `.src/components` folder.~~
+- I put the portfolio components in the `.src/components` folder due to build issues with the test files being in the `pages` directory (I've been using NextJS > 13 with the app router where it is easier to ignore a `components` folder within a page folder)
 - To reduce the number of files and boilerplate, the loading and not found states for the portfolio page are handled within the portfolio page component. If they were more complex or used by more than just the portfolio page I would create separate components for them.
 
 # Requirements

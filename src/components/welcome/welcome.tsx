@@ -7,10 +7,10 @@ export const Welcome: FunctionComponent = () => {
     <div className={styles.welcome}>
       <h1>Welcome to the Stockopedia Front-end Challenge</h1>
       <p>
-        We expect you to spend a few hours on this project, but don't worry if
-        you don't finish everything within that timeframe. Please let us know
-        which areas you weren't able to complete and how you plan to finish them
-        if given more time.
+        We expect you to spend a few hours on this project, but don&apos;t worry
+        if you don&apos;t finish everything within that timeframe. Please let us
+        know which areas you weren&apos;t able to complete and how you plan to
+        finish them if given more time.
       </p>
 
       <div className={styles.welcome__links}>
