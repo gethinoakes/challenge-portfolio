@@ -21,7 +21,11 @@ export const HoldingsSectors: FunctionComponent<PortfolioHoldingsProps> = ({
       <div className={styles.sectors}>
         {uniqueSectors.map((sector) => {
           return (
-            <span key={sector.id} className={styles.sectors__sector}>
+            <span
+              key={sector.id}
+              className={styles.sectors__sector}
+              data-testid="sector-name"
+            >
               {sector.name}
             </span>
           );

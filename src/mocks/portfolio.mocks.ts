@@ -75,5 +75,13 @@ export const TEST_PORTFOLIO: Portfolio = {
       change: 1.2,
       shares: 1000,
     },
+    {
+      id: 3,
+      name: "Test holding 3",
+      sector: BASIC_MATERIALS,
+      lastPrice: 500,
+      change: 1.5,
+      shares: 100,
+    },
   ],
 };
