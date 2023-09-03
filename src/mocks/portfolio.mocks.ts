@@ -1,5 +1,5 @@
-import { Sector } from "@/models/sector";
 import { Portfolio } from "@/models/portfolio";
+import { Sector } from "@/models/sector";
 
 export const CONSUMER_CYCLICALS: Sector = {
   id: 1,
@@ -51,6 +51,29 @@ export const JOHNS_PORTFOLIO: Portfolio = {
       lastPrice: 39,
       change: -3.25,
       shares: 10000,
+    },
+  ],
+};
+
+export const TEST_PORTFOLIO: Portfolio = {
+  id: 2,
+  name: "Test Portfolio",
+  holdings: [
+    {
+      id: 1,
+      name: "Test holding 1",
+      sector: CONSUMER_CYCLICALS,
+      lastPrice: 60,
+      change: 0.6,
+      shares: 100,
+    },
+    {
+      id: 2,
+      name: "Test holding 2",
+      sector: BASIC_MATERIALS,
+      lastPrice: 900,
+      change: 1.2,
+      shares: 1000,
     },
   ],
 };
