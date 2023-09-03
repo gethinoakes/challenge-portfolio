@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+import { PortfolioHeader } from "./components/portfolio-header/portfolio-header";
 import styles from "./portfolio.module.scss";
 
 const Portfolio = () => {
@@ -36,8 +37,9 @@ const Portfolio = () => {
     <>
       <Head>
         <title>
-          {portfolioData ? portfolioData.name : "Portfolio not found"} |
-          Stockopedia Challenge
+          {`${
+            portfolioData ? portfolioData.name : "Portfolio not found"
+          } | Stockopedia Challenge`}
         </title>
         <meta
           name="description"
@@ -56,6 +58,13 @@ const Portfolio = () => {
               the ID {portfolioId}.
             </p>
           </section>
+        )}
+
+        {portfolioData && (
+          <PortfolioHeader
+            name={portfolioData.name}
+            holdings={portfolioData.holdings}
+          />
         )}
       </div>
     </>
