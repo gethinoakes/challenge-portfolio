@@ -10,6 +10,7 @@ import styles from "./portfolio.module.scss";
 const Portfolio = () => {
   const router = useRouter();
   const { portfolioId } = router.query;
+  const [portfolioLoading, setPortfolioLoading] = useState(true);
   const [portfolioData, setPortfolioData] = useState<Portfolio | null>(null);
   const [portfolioNotFound, setPortfolioNotFound] = useState(false);
 
@@ -19,6 +20,7 @@ const Portfolio = () => {
     fetch(`/api/portfolio/${portfolioId}`)
       .then((res) => {
         if (!res.ok) {
+          setPortfolioLoading(false);
           setPortfolioNotFound(true);
           throw new Error("Portfolio not found");
         }
@@ -26,13 +28,35 @@ const Portfolio = () => {
         return res.json();
       })
       .then((data: Portfolio) => {
+        setPortfolioLoading(false);
         setPortfolioData(data);
-        console.log(data);
       })
       .catch((error) => {
         console.error(error);
       });
   }, [portfolioId]);
+
+  if (portfolioLoading) {
+    return (
+      <>
+        <Head>
+          <title>Stockopedia Challenge</title>
+          <meta
+            name="description"
+            content="Stockopedia Challenge - Front-end Technical Test"
+          />
+        </Head>
+
+        <div className={styles.portfolio}>
+          <section
+            className={`${styles.portfolio__section} ${styles.portfolio__sectionLoading}`}
+          >
+            <span></span>
+          </section>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
