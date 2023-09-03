@@ -3,11 +3,22 @@
   margin: 48px auto;
   padding: 48px;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   text-align: center;
+
+  h1 {
+    margin-bottom: 24px;
+  }
 }
 
-.welcome__api-url {
-  font-weight: bold;
+.welcome__links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 24px;
+
+  a {
+    font-weight: bold;
+  }
 }

@@ -1,5 +1,5 @@
-import { FunctionComponent } from "react";
 import Link from "next/link";
+import { FunctionComponent } from "react";
 import styles from "./welcome.module.scss";
 
 export const Welcome: FunctionComponent = () => {
@@ -13,13 +13,13 @@ export const Welcome: FunctionComponent = () => {
         if given more time.
       </p>
 
-      <Link
-        href="/api/portfolio/1"
-        className={styles.welcome__apiUrl}
-        target="_blank"
-      >
-        View portfolio mock data
-      </Link>
+      <div className={styles.welcome__links}>
+        <Link href="/api/portfolio/1" target="_blank">
+          View portfolio mock data
+        </Link>
+
+        <Link href="/portfolio/1">Go to portfolio ID 1</Link>
+      </div>
     </div>
   );
 };
