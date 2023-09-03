@@ -1,11 +1,15 @@
 import { Portfolio } from "@/models/portfolio";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import styles from "./portfolio.module.scss";
 
 const Portfolio = () => {
   const router = useRouter();
   const { portfolioId } = router.query;
+  const [portfolioData, setPortfolioData] = useState<Portfolio | null>(null);
+  const [portfolioNotFound, setPortfolioNotFound] = useState(false);
 
   useEffect(() => {
     if (!portfolioId) return;
@@ -13,12 +17,14 @@ const Portfolio = () => {
     fetch(`/api/portfolio/${portfolioId}`)
       .then((res) => {
         if (!res.ok) {
+          setPortfolioNotFound(true);
           throw new Error("Portfolio not found");
         }
 
         return res.json();
       })
       .then((data: Portfolio) => {
+        setPortfolioData(data);
         console.log(data);
       })
       .catch((error) => {
@@ -29,13 +35,29 @@ const Portfolio = () => {
   return (
     <>
       <Head>
-        <title>Portfolio ID: {portfolioId} | Stockopedia Challenge</title>
+        <title>
+          {portfolioData ? portfolioData.name : "Portfolio not found"} |
+          Stockopedia Challenge
+        </title>
         <meta
           name="description"
           content="Stockopedia Challenge - Front-end Technical Test"
         />
       </Head>
-      <p>Portfolio ID: {portfolioId}</p>
+
+      <div className={styles.portfolio}>
+        {portfolioNotFound && (
+          <section
+            className={`${styles.portfolio__section} ${styles.portfolio__sectionNotFound}`}
+          >
+            <h1>Portfolio not found</h1>
+            <p>
+              We apologise, but we could not locate a portfolio associated with
+              the ID {portfolioId}.
+            </p>
+          </section>
+        )}
+      </div>
     </>
   );
 };

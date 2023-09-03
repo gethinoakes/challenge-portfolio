@@ -1,0 +1,36 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 12px;
+  padding: 12px;
+
+  &__section {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 24px;
+
+    h1 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    &--not-found h1 {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .portfolio {
+    padding: 24px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .portfolio {
+    padding: 48px;
+  }
+}
