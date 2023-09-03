@@ -1,0 +1,39 @@
+.holdings-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: -12px;
+}
+
+.holdings-table {
+  width: 100%;
+  min-width: 600px;
+
+  th {
+    text-align: left;
+    font-weight: 700;
+    padding-bottom: 24px;
+    border-bottom: var(--border);
+  }
+
+  tr {
+    td {
+      padding-top: 24px;
+    }
+
+    &:last-child td {
+      padding-bottom: 12px;
+    }
+  }
+
+  .number-col {
+    text-align: right;
+  }
+
+  .positive-change {
+    color: #228745de;
+  }
+
+  .negative-change {
+    color: #cc4752de;
+  }
+}
