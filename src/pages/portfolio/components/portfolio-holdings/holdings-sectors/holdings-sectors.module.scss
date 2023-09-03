@@ -1,0 +1,14 @@
+.sectors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 12px;
+
+  &__sector {
+    flex-shrink: 0;
+    padding: 7px 16px;
+    border-radius: 100px;
+    background-color: #d8deeb;
+    font-weight: 400;
+  }
+}

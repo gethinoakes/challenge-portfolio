@@ -1,6 +1,7 @@
 import { Portfolio } from "@/models/portfolio";
 import portfolioStyles from "@/pages/portfolio/portfolio.module.scss";
 import { FunctionComponent } from "react";
+import styles from "./portfolio-header.module.scss";
 
 type PortfolioHeaderProps = Omit<Portfolio, "id">;
 
@@ -23,7 +24,9 @@ export const PortfolioHeader: FunctionComponent<PortfolioHeaderProps> = ({
   }).format(totalValuation);
 
   return (
-    <section className={portfolioStyles.portfolio__section}>
+    <section
+      className={`${portfolioStyles.portfolio__section} ${styles.portfolioHeader}`}
+    >
       <h1>{name}</h1>
       <p>Valuation</p>
       <span>{formattedTotalValuation}</span>
