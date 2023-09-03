@@ -1,0 +1,17 @@
+.portfolio-holdings {
+  p {
+    padding: 0;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__separator {
+    display: block;
+    width: 100%;
+    margin: 24px -24px;
+    padding: 0 24px;
+    border-bottom: var(--border);
+  }
+}
